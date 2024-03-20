@@ -49,11 +49,7 @@ const Form = () => {
         if (Object.keys(error).length) {
             alert('форма не отправленна, заполните обязательные поля')
             return false
-        }else (
-            alert('форма успешно отправлена') 
-        )
-
-        
+        }       
     }
   
 
