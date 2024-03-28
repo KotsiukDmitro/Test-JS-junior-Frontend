@@ -1,26 +1,18 @@
 import React from 'react';
-import { useState } from 'react';
-
+import { useDataList } from '../common/hooks';
 import '../App.css';
 
 const ListMessages = () => {
   const listName = ['Dmitriy', 'Alexander', 'Nastya', 'Vladislav', 'Ivan'];
 
-  const [messagesList, setMessagesList] = useState(listName);
-
-  const deleteMessage = (indexTodo) => {
-    const del = messagesList.filter((elem, index) => {
-      return index !== indexTodo;
-    });
-    setMessagesList(del);
-  };
+  const { dataList, deleteData } = useDataList(listName);
 
   return (
     <>
       <h2>List of messages: </h2>
       <table className="massages-list-table">
         <tbody>
-          {messagesList.map((name, index) => {
+          {dataList.map((name, index) => {
             return (
               <tr key={name} className="">
                 <td className="cell-title">
@@ -28,7 +20,7 @@ const ListMessages = () => {
                   <span className="text">{name}</span>
                 </td>
                 <td className="cell-active">
-                  <button onClick={() => deleteMessage(index)} className="btnDelete">
+                  <button onClick={() => deleteData(index)} className="btnDelete">
                     delete
                   </button>{' '}
                 </td>

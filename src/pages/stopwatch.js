@@ -1,11 +1,16 @@
 import React from 'react';
 import { useState, useEffect, useRef } from 'react';
+import { useDataList } from '../common/hooks';
 import './pages.css';
+
+const KEY_S = 'KeyS';
+const KEY_R = 'KeyR';
+const KEY_L = 'KeyL';
 
 const Stopwatch = () => {
   const [time, setTime] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
-  const [dataList, setDataList] = useState([]);
+  const { dataList, setDataList, deleteData } = useDataList([]);
 
   useEffect(() => {
     let intervalId;
@@ -15,20 +20,17 @@ const Stopwatch = () => {
     return () => clearInterval(intervalId);
   }, [isRunning, time]);
 
+  const getTime = (value) => {
+    return Math.floor(value).toString().padStart(2, '0');
+  };
   const getHours = (value) => {
-    return Math.floor(value / 360000)
-      .toString()
-      .padStart(2, '0');
+    return getTime(value / 360000);
   };
   const getMinutes = (value) => {
-    return Math.floor((value % 360000) / 6000)
-      .toString()
-      .padStart(2, '0');
+    return getTime((value % 360000) / 6000);
   };
   const getSeconds = (value) => {
-    return Math.floor((value % 6000) / 100)
-      .toString()
-      .padStart(2, '0');
+    return getTime((value % 6000) / 100);
   };
   const getMilliseconds = (value) => {
     return (value % 100).toString().padStart(2, '0');
@@ -57,27 +59,24 @@ const Stopwatch = () => {
     setDataList([...dataList, time]);
   };
 
-  const deleteData = (indexData) => {
-    const del = dataList.filter((elem, index) => {
-      return index !== indexData;
-    });
-    setDataList(del);
-  };
-
   const savedHandler = useRef();
   savedHandler.current = (event) => {
-    if (event.code === 'KeyS') {
-      console.log('isRunning', isRunning);
-      startStop();
+    switch (event.code) {
+      case KEY_S:
+        startStop();
+        break;
+      case KEY_R:
+        reset();
+        break;
+      case KEY_L:
+        addData();
+        break;
+
+      default:
+        return false;
     }
-    if (event.code === 'KeyR') {
-      reset();
-    }
-    if (event.code === 'KeyL') {
-      addData();
-    }
-    return false;
   };
+
   useEffect(() => {
     const eventListener = (event) => savedHandler.current(event);
     const isSupported = window.addEventListener;
@@ -113,7 +112,7 @@ const Stopwatch = () => {
                 {getHours(item)}:{getMinutes(item)}:{getSeconds(item)}:{getMilliseconds(item)}
               </span>
               <button className="btnDelete" onClick={() => deleteData(index)}>
-                delete
+                Delete
               </button>
             </li>
           );

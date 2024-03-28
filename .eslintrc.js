@@ -23,6 +23,6 @@ module.exports = {
   rules: {
     'react/react-in-jsx-scope': 'off',
     'no-useless-escape': 'off',
-    'react/no-unescaped-entities': 'off',
+    'react/no-unescaped-entities': 'off'
   }
 };
