@@ -1,99 +1,101 @@
 .item {
-    display: flex;
+  display: flex;
 }
 
 .item-resault {
-    margin-right: 10px;
-
+  margin-right: 10px;
 }
 
-.btnStart, .btnAdd, .btnDelete, .btnReset {
-    cursor: pointer;
+.btnStart,
+.btnAdd,
+.btnDelete,
+.btnReset {
+  cursor: pointer;
 }
 
-.btnStart, .btnAdd, .btnDelete {
-    margin-left: 10px;
+.btnStart,
+.btnAdd,
+.btnDelete {
+  margin-left: 10px;
 }
 
 .timer {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .item {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-  
-  .massages-list-table {
-    margin: auto;
-  }
-  .cell-title {
-    text-align: left;
-  }
-  .cell-action {
-    text-align: right;
-  }
-  .text {
-    margin-right: 50px;
-  }
-  
-  .btnDelete {
-    cursor: pointer;
-  }
-  
-  
-  .formGroup {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    margin-top: 30px;
-  }
-  
-  .formLabel {
-    margin: 0 0 10px 30px;
-    font-size: 24px;
-    color: rgb(83, 184, 83);
-  }
-  
-  .formInput {
-    font-size: 16px;
-    border-radius: 5px;
-    letter-spacing: 2px;
-    padding: 5px;
-    margin: 0 30px;
-    border-radius: 3px;
-    border: 1px solid rgb(143, 143, 176);
-    margin: auto;
-    width: 500px;
-  }
-  
-  .formCheckbox {
-    margin-top: 20px;
-    margin-right: 10px;
-    cursor: pointer;
-  
-  }
-  
-  .textError {
-    color: red;
-    font-size: 12px;
-   margin-top: 0;
-  }
-  
-  .errorInput {
-    border: 1px solid red;
-  }
-  
-  .btn-submit {
-    margin-top: 50px;
-    text-align: center;
-    height: 40px;
-    width: 150px;
-    border-radius: 5px;
-    color: white;
-    font-size: 24px;
-    background-color: aqua;
-    border: none;
-    cursor: pointer;
-  }
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.massages-list-table {
+  margin: auto;
+}
+.cell-title {
+  text-align: left;
+}
+.cell-action {
+  text-align: right;
+}
+.text {
+  margin-right: 50px;
+}
+
+.btnDelete {
+  cursor: pointer;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-top: 30px;
+}
+
+.formLabel {
+  margin: 0 0 10px 30px;
+  font-size: 24px;
+  color: rgb(83, 184, 83);
+}
+
+.formInput {
+  font-size: 16px;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  padding: 5px;
+  margin: 0 30px;
+  border-radius: 3px;
+  border: 1px solid rgb(143, 143, 176);
+  margin: auto;
+  width: 500px;
+}
+
+.formCheckbox {
+  margin-top: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.textError {
+  color: red;
+  font-size: 12px;
+  margin-top: 0;
+}
+
+.errorInput {
+  border: 1px solid red;
+}
+
+.btn-submit {
+  margin-top: 50px;
+  text-align: center;
+  height: 40px;
+  width: 150px;
+  border-radius: 5px;
+  color: white;
+  font-size: 24px;
+  background-color: aqua;
+  border: none;
+  cursor: pointer;
+}

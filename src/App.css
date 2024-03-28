@@ -8,16 +8,13 @@
 }
 
 .task-list {
-
   color: rgb(92, 211, 92);
-
 }
 
 .list {
   display: flex;
   justify-content: center;
   gap: 20px;
-  
 }
 
 .btn {
@@ -33,4 +30,3 @@
   text-decoration: underline;
   color: red;
 }
-
