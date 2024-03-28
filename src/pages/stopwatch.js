@@ -33,7 +33,7 @@ const Stopwatch = () => {
     return getTime((value % 6000) / 100);
   };
   const getMilliseconds = (value) => {
-    return (value % 100).toString().padStart(2, '0');
+    return getTime(value % 100);
   };
 
   const hours = getHours(time);
